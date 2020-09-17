@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quoting Dojo</title>
+</head>
+<body>
+    <div>
+        <h1>Quoting Dojo</h1>
+        <!-- <%- JSON.stringify(messages) %>  -->
+<!-- based on the structure of your messages, determine how to display them -->
+<% if(messages) { %>
+    <% for (message in messages) { %>
+       <h2><%= messages[message] %> is required.</h2>
+    <% } %>
+ <% } %>
+        <form action="/quotes" method="post">
+            <h3>Your Name: <input type="text" name="name"></h3>
+            <h3>Your Quote: </h3><textarea name="quote"cols="30" rows="10"></textarea>
+            <br>
+            <button type="submit">Submit Quote</button>
+        </form>
+        <a href="/quotes"><button>Skip to Quotes</button></a>
+
+    </div>
+</body>
+</html>
